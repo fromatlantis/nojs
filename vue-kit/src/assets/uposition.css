@@ -1,0 +1,70 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: 14px;
+	font-family: 'Microsoft YaHei';
+}
+.header {
+	padding: 15px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+.header-right {
+	position: absolute;
+	right: 10px;
+	color: #20a0ff;
+	text-decoration: none;
+}
+.go-back {
+	position: absolute;
+	left: 5px;
+}
+.go-back a {
+	text-decoration: none;
+	color: #555;
+}
+.page-body textarea {
+	border: none;
+	height: 100px;
+	resize: none;
+}
+.pic-card > div {
+	width: 80px;
+	height: 80px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin: 10px;
+}
+.flex-box {
+	display: flex;
+	align-items: center;
+	flex-flow: row wrap;
+}
+.flex-center {
+	justify-content: center;
+}
+.flex-item {
+	flex: 0 1 calc(33.33% - 20px);
+	line-height: 20px;
+}
+.pic-card {
+	font-size: 40px;
+	color: #ccc;
+}
+.sl-position {
+	margin-left: 10px;
+    border-bottom: 1px solid #ebebeb;
+    padding: 10px 10px 10px 0;
+    border-top: 1px solid #ebebeb;
+    text-align: right;
+}
+.sl-title {
+	float: left;
+}
+#fileElem {
+	display: none;
+}

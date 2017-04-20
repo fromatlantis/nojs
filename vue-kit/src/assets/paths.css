@@ -1,0 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: 14px;
+	font-family: 'Microsoft YaHei';
+}
+.header {
+	padding: 15px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+.header-right {
+	position: absolute;
+	right: 10px;
+	color: #20a0ff;
+	text-decoration: none;
+}
+.go-back {
+	position: absolute;
+	left: 5px;
+}
+.go-back a {
+	text-decoration: none;
+	color: #555;
+}
+.flex-box {
+	display: flex;
+	align-items: center;
+}
+.flex-item {
+	flex: 0 1 auto;
+	line-height: 20px;
+}
+.paths-container {
+	background: url('./paths.png');
+	background-size: cover;
+	position: absolute;
+	top: 45px;
+	left: 0;
+	width: 100%;
+	bottom: 0;
+}
+.header > .el-switch {
+	position: absolute;
+    right: 10px;
+    top: 12px;
+}

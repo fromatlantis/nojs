@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: 14px;
+	font-family: 'Microsoft YaHei';
+}
+.header {
+	padding: 15px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+}
+.header-right {
+	position: absolute;
+	right: 10px;
+	color: #20a0ff;
+	text-decoration: none;
+}
+.go-back {
+	position: absolute;
+	left: 5px;
+}
+.go-back a {
+	text-decoration: none;
+	color: #555;
+}
+.search-chip {
+	padding: 5px;
+	background: #f5f5f5;
+}
+.search-chip input {
+	height: 30px;
+}
+#allmap {
+	height: 200px;
+}
+.bmap-container > .l-result > li {
+	list-style: none;
+	padding: 5px;
+	cursor: pointer;
+	border-bottom: 1px solid #ebebeb;
+}
+.bmap-container > .l-result {
+	position: absolute;
+	z-index: 100;
+	background: #fff;
+    max-height: calc(100vh - 285px);
+    overflow-y: auto;
+    width: 100%;
+}
+.bmap-container > .l-result.show {
+	display: block;
+}
+.bmap-container > .l-result > li > p {
+	line-height: 24px;
+}
+.bmap-container  > .l-result > li > p.address {
+	color: #ccc;
+	font-size: 13px;
+}

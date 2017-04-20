@@ -1,0 +1,33 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: 14px;
+	font-family: 'Microsoft YaHei';
+	background: -webkit-linear-gradient(left top, rgba(194,239,239,.15) , rgba(5,245,245,.15)); 
+}
+.container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	background: -webkit-linear-gradient(rgba(255,255,255,.5) , rgba(255,255,255,.3)); 
+	animation: changeBg 5s infinite;
+}
+.full-width {
+	width: 100%;
+}
+.login-card > .el-input {
+	margin-bottom: 10px;
+}
+.login-card > .el-checkbox {
+	margin-bottom: 10px;
+}
+@-webkit-keyframes changeBg
+{
+	0% {background: rgba(255,255,255,0.1) }
+	50% {background:  rgba(255,255,255,0.5)}
+	100% {background:  rgba(255,255,255,.1)}
+}
