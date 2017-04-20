@@ -1,0 +1,2 @@
+# nojs
+only js
