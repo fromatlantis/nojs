@@ -10,54 +10,60 @@ import {
     Platform,
     Dimensions
 } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-class MList extends React.Component {
+import {
+  createNavigator,
+  createNavigationContainer,
+  TabRouter,
+  addNavigationHelpers,
+  StackNavigator
+} from 'react-navigation';
+import Mlist from './mlist';
+class Profile extends React.Component {
     static navigationOptions = {
-        title: '采集位置',
+        title: '信贷员列表',
     }
     constructor(props) {
         super(props);
         this.state = {
-            currentTab: 1
+            currentTab: 0
         };
     }
     render() {
+        const { navigate } = this.props.navigation;
         return (
-            <View style={styles.container}>
-                <StatusBar
-                    backgroundColor="rgba(0,0,255,.1)"
-                    barStyle="default"
-                    animated={true}
-                />
-                <View style={styles.content}>
-                    <View style={styles.listContainer}>
+            <View style={styles.content}>
+                <View style={styles.listContainer}>
+                    <TouchableOpacity onPress={() => navigate('Mlist')}>
                         <View style={styles.listItem}>
                             <View style={styles.listIcon}>
                                 <Image source={require('./img/icon.png')}
                                 style={styles.image} resizeMode='contain'/>
                             </View>
                             <View style={styles.listDes}>
-                                <Text style={styles.des}>众鑫大厦</Text>
-                                <Text style={styles.des}>采集时间：2017-03-21 17:15</Text>
+                                <Text style={styles.des}>信贷员A</Text>
+                                <Text style={styles.des}>最新采集1</Text>
                             </View>      
                         </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigate('Mlist')}>
                         <View style={styles.listItem}>
                             <View style={styles.listIcon}>
                                 <Image source={require('./img/icon.png')}
                                 style={styles.image}/>
                             </View>
                             <View style={styles.listDes}>
-                                <Text style={styles.des}>万达广场</Text>
-                                <Text style={styles.des}>采集时间：2017-03-21 17:15</Text>
+                                <Text style={styles.des}>信贷员A</Text>
+                                <Text style={styles.des}>最新采集1</Text>
                             </View>      
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         );
     }
 }
-export default MList;
+
+export default Profile;
 const styles = StyleSheet.create({
     container: {
         flex: 1
@@ -75,7 +81,7 @@ const styles = StyleSheet.create({
     },
     cell: {
         flex: 1,
-        height: 30,
+        height: 40,
         justifyContent: 'center'
     },
     barLeft: {
@@ -88,7 +94,7 @@ const styles = StyleSheet.create({
         textAlign: 'right'
     },
     cellfixed: {
-        height: 30,
+        height: 40,
         width: 80,
         justifyContent: 'center',
         paddingLeft: 8,
@@ -126,7 +132,7 @@ const styles = StyleSheet.create({
     },
     tabBarItem: {
         flex: 1,
-        height: 40,
+        height: 50,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -145,7 +151,7 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     tabBarText: {
-        color:'#555'
+        //color:'#555'
     },
     tabBarTextCurrent: {
         color:'red'

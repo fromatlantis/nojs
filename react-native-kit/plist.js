@@ -10,61 +10,30 @@ import {
     Platform,
     Dimensions
 } from 'react-native';
-import MList from './mlist';
-export default class PList extends React.Component {
-
+import {
+  createNavigator,
+  createNavigationContainer,
+  TabRouter,
+  addNavigationHelpers,
+  StackNavigator
+} from 'react-navigation';
+import Mlist from './mlist';
+class PList extends React.Component {
+    static navigationOptions = {
+        title: '信贷员列表',
+    }
     constructor(props) {
         super(props);
         this.state = {
             currentTab: 0
         };
     }
-
-    _pressButton() {
-        const { navigator } = this.props;
-        if(navigator) {
-            //很熟悉吧，入栈出栈~ 把当前的页面pop掉，这里就返回到了上一个页面:FirstPageComponent了
-            navigator.pop();
-        }
-    }
-
-    _goMList() {
-        const { navigator } = this.props;
-        if(navigator) {
-            navigator.push({
-                name: 'MList',
-                component: MList,
-            })
-        }
-    }
-
     render() {
+        const { navigate } = this.props.navigation;
         return (
-            <View style={styles.container}>
-                <StatusBar
-                    backgroundColor="rgba(0,0,255,.1)"
-                    barStyle="default"
-                    animated={true}
-                />
-                <View style={styles.content}>
-                    <View style={styles.barContainer}>
-                      <View style={styles.cellfixed}>
-                        <Text style={styles.barLeft} onPress={this._pressButton.bind(this)}>
-                          返回
-                        </Text>
-                      </View>
-                      <View style={styles.cell}>
-                        <Text style={styles.barTitle}>
-                          信贷员列表
-                        </Text>
-                      </View>
-                      <View style={styles.cellfixed}>
-                        <Text style={styles.barRight}>
-                          设置
-                        </Text>
-                      </View>
-                    </View>
-                    <View style={styles.listContainer}>
+            <View style={styles.content}>
+                <View style={styles.listContainer}>
+                    <TouchableOpacity onPress={() => navigate('Mlist')}>
                         <View style={styles.listItem}>
                             <View style={styles.listIcon}>
                                 <Image source={require('./img/icon.png')}
@@ -75,6 +44,8 @@ export default class PList extends React.Component {
                                 <Text style={styles.des}>最新采集1</Text>
                             </View>      
                         </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigate('Mlist')}>
                         <View style={styles.listItem}>
                             <View style={styles.listIcon}>
                                 <Image source={require('./img/icon.png')}
@@ -85,36 +56,21 @@ export default class PList extends React.Component {
                                 <Text style={styles.des}>最新采集1</Text>
                             </View>      
                         </View>
-                    </View>
-                </View>
-                <View style={styles.tabBar}>
-                    <View style={styles.tabBarItem}>
-                        <Text style={this.state.currentTab == 0 ? styles.tabBarTextCurrent : styles.tabBarText}>首页</Text>
-                    </View>
-                    <View style={styles.tabBarItem}>
-                        <Text style={styles.tabBarText} onPress={this._goMList.bind(this)}>采集</Text>
-                    </View>
-                    <View style={styles.tabBarItemPlus}>
-                        <Text style={[styles.tabBarText,styles.tabBarItemPlusText]}>+</Text>
-                    </View>
-                    <View style={styles.tabBarItem}>
-                        <Text style={styles.tabBarText}>导航</Text>
-                    </View>
-                     <View style={styles.tabBarItem}>
-                        <Text style={styles.tabBarText}>我的</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         );
     }
 }
 
+export default PList;
 const styles = StyleSheet.create({
     container: {
         flex: 1
     },
     content: {
-        flex: 1
+        flex: 1,
+        paddingTop: Platform.OS === 'android' ? 0 : 20, //或者配置android的translucent为true，从物理顶端开始显示
     },
     barContainer: {
         // 容器需要添加direction才能变成让子元素flex
@@ -195,7 +151,7 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     tabBarText: {
-        color:'#555'
+        //color:'#555'
     },
     tabBarTextCurrent: {
         color:'red'

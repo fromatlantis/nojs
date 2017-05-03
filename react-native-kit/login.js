@@ -17,30 +17,18 @@ import {
   AlertIOS,
   Dimensions
 } from 'react-native';
-import PList from './plist';
-export default class Login extends Component {
+import { StackNavigator } from 'react-navigation';
+import Home from './home';
+class Login extends React.Component {
+  static navigationOptions = {
+    title: '登陆',
+  }
   constructor(props) {
     super(props);
     this.state = {};
   }
-  _onPressLogin() {
-    /**
-    AlertIOS.alert('登录成功',null,[
-      {text: '确定', onPress: ()=> console.log('点击确定')}
-    ])
-    **/
-    const { navigator } = this.props;
-    //为什么这里可以取得 props.navigator?请看上文:
-    //<Component {...route.params} navigator={navigator} />
-    //这里传递了navigator作为props
-    if(navigator) {
-        navigator.push({
-            name: 'PList',
-            component: PList,
-        })
-    }
-  }
   render() {
+    const { navigate } = this.props.navigation;
     return (
        <Image source={require('./img/bg.jpg')}
             style={styles.imageBg} resizeMode='cover'>
@@ -65,7 +53,7 @@ export default class Login extends Component {
             />
           </View>
           <Button
-            onPress={this._onPressLogin.bind(this)}
+            onPress={() => navigate('Home')}
             title="登录"
             color="#03a9f4"
           />
@@ -74,7 +62,18 @@ export default class Login extends Component {
     );
   }
 }
-
+const LoginStack = StackNavigator({
+  Login: {
+    screen: Login
+  },
+  Home: {
+    screen: Home
+  }
+},{
+  initialRouteName: 'Login',
+  headerMode: 'none',
+});
+export default LoginStack;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -10,8 +10,8 @@ import {
     Platform,
     Dimensions
 } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-class MList extends React.Component {
+
+export default class MList extends React.Component {
     static navigationOptions = {
         title: '采集位置',
     }
@@ -21,6 +21,15 @@ class MList extends React.Component {
             currentTab: 1
         };
     }
+
+    _pressButton() {
+        const { navigator } = this.props;
+        if(navigator) {
+            //很熟悉吧，入栈出栈~ 把当前的页面pop掉，这里就返回到了上一个页面:FirstPageComponent了
+            navigator.pop();
+        }
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -53,18 +62,34 @@ class MList extends React.Component {
                         </View>
                     </View>
                 </View>
+                <View style={styles.tabBar}>
+                    <View style={styles.tabBarItem}>
+                        <Text style={this.state.currentTab == 0 ? styles.tabBarTextCurrent : styles.tabBarText}>首页</Text>
+                    </View>
+                    <View style={styles.tabBarItem}>
+                        <Text style={this.state.currentTab == 1 ? styles.tabBarTextCurrent : styles.tabBarText}>采集</Text>
+                    </View>
+                    <View style={styles.tabBarItemPlus}>
+                        <Text style={[styles.tabBarText,styles.tabBarItemPlusText]}>+</Text>
+                    </View>
+                    <View style={styles.tabBarItem}>
+                        <Text style={styles.tabBarText}>导航</Text>
+                    </View>
+                     <View style={styles.tabBarItem}>
+                        <Text style={styles.tabBarText}>我的</Text>
+                    </View>
+                </View>
             </View>
         );
     }
 }
-export default MList;
+
 const styles = StyleSheet.create({
     container: {
         flex: 1
     },
     content: {
-        flex: 1,
-        paddingTop: Platform.OS === 'android' ? 0 : 20, //或者配置android的translucent为true，从物理顶端开始显示
+        flex: 1
     },
     barContainer: {
         // 容器需要添加direction才能变成让子元素flex

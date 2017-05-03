@@ -10,54 +10,92 @@ import {
     Platform,
     Dimensions
 } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-class MList extends React.Component {
-    static navigationOptions = {
-        title: '采集位置',
-    }
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentTab: 1
-        };
-    }
-    render() {
-        return (
-            <View style={styles.container}>
-                <StatusBar
-                    backgroundColor="rgba(0,0,255,.1)"
-                    barStyle="default"
-                    animated={true}
-                />
-                <View style={styles.content}>
-                    <View style={styles.listContainer}>
-                        <View style={styles.listItem}>
-                            <View style={styles.listIcon}>
-                                <Image source={require('./img/icon.png')}
-                                style={styles.image} resizeMode='contain'/>
-                            </View>
-                            <View style={styles.listDes}>
-                                <Text style={styles.des}>众鑫大厦</Text>
-                                <Text style={styles.des}>采集时间：2017-03-21 17:15</Text>
-                            </View>      
-                        </View>
-                        <View style={styles.listItem}>
-                            <View style={styles.listIcon}>
-                                <Image source={require('./img/icon.png')}
-                                style={styles.image}/>
-                            </View>
-                            <View style={styles.listDes}>
-                                <Text style={styles.des}>万达广场</Text>
-                                <Text style={styles.des}>采集时间：2017-03-21 17:15</Text>
-                            </View>      
-                        </View>
-                    </View>
-                </View>
+import {
+  createNavigator,
+  createNavigationContainer,
+  TabRouter,
+  addNavigationHelpers,
+  StackNavigator
+} from 'react-navigation';
+import Mlist from './mlist';
+import Plist from './plist';
+import Profile from './profile';
+const CustomTabBar = ({
+  navigation,
+  curRouteName
+}) => {
+  const { routes } = navigation.state;
+  return (
+    <View style={styles.tabBar}>
+        {routes.map(route => (
+            <View style={route.routeName == '+' ? styles.tabBarItemPlus : styles.tabBarItem } key={route.routeName}>
+                <TouchableOpacity
+                onPress={() => {
+                        if(route.routeName != curRouteName){
+                            navigation.navigate(route.routeName);
+                        }
+                    }
+                }
+                >
+                <Text style = {route.routeName == curRouteName ? styles.tabBarTextCurrent : styles.tabBarText}>{route.routeName}</Text>
+                </TouchableOpacity>
             </View>
-        );
-    }
+        ))}
+    </View>
+  );
 }
-export default MList;
+
+const CustomTabView = ({
+  router,
+  navigation,
+}) => {
+  const { routes, index } = navigation.state;
+  const ActiveScreen = router.getComponentForState(navigation.state);
+  return (
+    <View style={styles.container}>
+      <ActiveScreen
+        navigation={addNavigationHelpers({
+          ...navigation,
+          state: routes[index],
+        })}
+      />
+       <CustomTabBar navigation={navigation} curRouteName={routes[index].routeName}/>
+    </View>
+  );
+};
+
+const CustomTabRouter = TabRouter({
+  '首页': {
+    screen: Plist,
+  },
+  '采集': {
+    screen: Mlist
+  },
+  '+': {
+    screen: Mlist,
+  },
+  '导航':{
+    screen: Mlist,
+  },
+  '我的':{
+    screen: Mlist,
+  }
+}, {
+  // Change this to start on a different tab
+  initialRouteName: '首页',
+});
+//注意屌用顺序，必须按顺序书写
+const CustomTabs = createNavigationContainer(createNavigator(CustomTabRouter)(CustomTabView));
+//Stack和Custom组合
+const PlistStack = StackNavigator({
+    Root: {
+        screen: CustomTabs
+    },
+    Mlist: {
+        screen: Mlist
+    }
+});
+export default PlistStack;
 const styles = StyleSheet.create({
     container: {
         flex: 1
@@ -75,7 +113,7 @@ const styles = StyleSheet.create({
     },
     cell: {
         flex: 1,
-        height: 30,
+        height: 40,
         justifyContent: 'center'
     },
     barLeft: {
@@ -88,7 +126,7 @@ const styles = StyleSheet.create({
         textAlign: 'right'
     },
     cellfixed: {
-        height: 30,
+        height: 40,
         width: 80,
         justifyContent: 'center',
         paddingLeft: 8,
@@ -126,7 +164,7 @@ const styles = StyleSheet.create({
     },
     tabBarItem: {
         flex: 1,
-        height: 40,
+        height: 50,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -145,7 +183,7 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     tabBarText: {
-        color:'#555'
+        //color:'#555'
     },
     tabBarTextCurrent: {
         color:'red'
