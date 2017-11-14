@@ -1,0 +1,50 @@
+{
+  "name": "ejia-v4.0",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "babel": "^6.5.2",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "css-loader": "^0.23.1",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "glob": "^7.0.3",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-sftp": "^0.1.5",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.11",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.19.0",
+    "image-webpack-loader": "^1.8.0",
+    "jade": "~1.11.0",
+    "jade-loader": "^0.8.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "json-loader": "^0.5.7",
+    "lodash": "^4.13.1",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.10.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}

@@ -1,0 +1,78 @@
+body {
+	background: rgb(22,161,133);
+}
+.login-card {
+	position: absolute;
+	width: 795px;
+	height: 455px;
+	left: 50%;
+	top: 50%;
+	margin-top: -227px;
+	margin-left: -397px;
+}
+.login-card img {
+	width: 100%;
+}
+.login-container {
+	position: relative;
+}
+.login-wrapper {
+	position: absolute;
+    top: 72px;
+    left: 227px;
+}
+.sys-title {
+	font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center; 
+    color:#45bda6;
+    font-weight: bold;
+}
+.input-group {
+    position: relative;
+    margin-bottom: 7px;
+    font-size: 16px;
+    color: #fff;
+    background: #5cbdaa;
+}
+input {
+	padding: 12px 0;
+    background: none;
+    border: none;
+    width: 260px;
+    font-size: 16px;
+    color: #fff;
+}
+input:focus {
+	background: #55b7a4;
+}
+.ver-code {
+	width: 178px;
+}
+.server-code {
+	display: inline-block;
+	padding: 12px 0;
+	width: 80px;
+	text-align: center;
+	background: #48bca5;
+  	border-left: 1px solid #16a085;
+}
+.input-group span {
+	position: absolute;
+	top:0;
+	left: 35px;
+	display: inline-block;
+	padding: 12px 0;
+}
+.input-icon {
+	padding:12px 10px;
+}
+.login-btn {
+	background:#048f74; 
+	width: 300px;
+   	padding: 12px 0;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}

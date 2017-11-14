@@ -1,0 +1,70 @@
+{
+	"edges":[
+		{"sourceID": "root", "attributes": {}, "targetID": "id", "size": 1},
+		{"sourceID": "root", "attributes": {}, "targetID": "education", "size": 1},
+		{"sourceID": "root", "attributes": {}, "targetID": "living", "size": 1},
+		{"sourceID": "root", "attributes": {}, "targetID": "income", "size": 1},
+        {"sourceID": "root", "attributes": {}, "targetID": "name", "size": 1},
+        {"sourceID": "root", "attributes": {}, "targetID": "address", "size": 1},
+        {"sourceID": "root", "attributes": {}, "targetID": "phone", "size": 1}
+	],
+	"nodes":[
+		{"color": "#03a9f4", "label": "基本信息", "attributes": {}, "y": 0, "x": 0, "id": "root", "size": 50},
+		{"color": "#4f19c7", "label": "身份证 13052115100123457", "attributes": {}, "y": -100, "x": -120, "id": "id", "size": 15},
+		{
+            "color": "#4f19c7",
+            "label": "本科",
+            "attributes": {},
+            "y": 150,
+            "x": 200,
+            "id": "education",
+            "size": 15
+        },
+         {
+            "color": "#4f19c7",
+            "label": "居住满一年",
+            "attributes": {},
+            "y": 100,
+            "x": 120,
+            "id": "living",
+            "size": 15
+        },
+        {
+            "color": "#4f19c7",
+            "label": "月收入 5000",
+            "attributes": {},
+            "y": -150,
+            "x": -200,
+            "id": "income",
+            "size": 15
+        },
+        {
+            "color": "#4f19c7",
+            "label": "牛志伟",
+            "attributes": {},
+            "y": -100,
+            "x": 100,
+            "id": "name",
+            "size": 15
+        },
+        {
+            "color": "#4f19c7",
+            "label": "非本地户口",
+            "attributes": {},
+            "y": 100,
+            "x": -100,
+            "id": "address",
+            "size": 15
+        },
+        {
+            "color": "#4f19c7",
+            "label": "15100123457",
+            "attributes": {},
+            "y": -50,
+            "x": 80,
+            "id": "phone",
+            "size": 15
+        }
+
+	]
+}

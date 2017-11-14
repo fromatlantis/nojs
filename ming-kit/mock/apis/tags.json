@@ -1,0 +1,8 @@
+{
+	"code": 200,
+	"records":{
+		"base":["身份证 13052115100123457","牛志伟","收入 5000","非本地户口","居住满一年","15100123457","本科"],
+		"finance":["购买基金 <span class='color-red'>5万</span>","购买理财 <span class='color-red'>2000万</span>","购买国债 <span class='color-red'>500万</span>","购买保险 <span class='color-red'>10万</span>"]	
+	},
+	"message":""
+}

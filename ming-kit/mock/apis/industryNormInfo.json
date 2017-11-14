@@ -1,0 +1,19 @@
+{
+  "code": "1000",
+  "message": "成功",
+  "data": {
+    "city_id": "13000320",
+    "loan_amt": 28662800,
+    "city_name": "保定市分行",
+    "nonp_loan_bal_rate": 0,
+    "loan_cnt": 148,
+    "nonp_loan_bal": 0,
+    "industry_id": "0111",
+    "nonp_loan_lvl": "5",
+    "loan_amt_curr": 13651000,
+    "loan_cnt_curr": 55,
+    "nonp_loan_cnt": 0,
+    "loan_bal_curr": 12590774.219999999,
+    "industry_name": "谷物的种植"
+  }
+}

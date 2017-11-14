@@ -1,0 +1,192 @@
+@font-face {font-family: 'iconfont';
+    src: url('./iconfont/iconfont.eot'); /* IE9*/
+  	src: url('./iconfont/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./iconfont/iconfont.ttf') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+body {
+	font-family: 'Microsoft YaHei';
+	color: #555;
+	font-size: 14px;
+	-webkit-font-smoothing:antialiased;
+	background-color: #f5f5f5;
+}
+a {
+	color: #fff;
+	outline: none;
+	text-decoration: none;
+}
+table {
+	font-size: 14px;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+	font-style:normal;
+	font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.if-1x{
+	font-size:1rem;
+}
+.if-2x{
+	font-size: 2rem;
+}
+.if-3x{
+	font-size: 3rem;
+}
+.if-5x{
+	font-size:5rem;
+}
+.if-6x{
+	font-size:6rem;
+}
+.header{
+	height: 60px;
+	line-height: 60px;
+	background: #03a9f4;
+	text-align: center;
+	color:#e1f5fe;
+	position:fixed;
+	top:0;
+	left: 0;
+	right:0;
+	padding-left: 200px;
+	z-index: 100;
+	font-size: 16px;
+}
+.header span {
+	
+}
+.profile {
+	float: right;
+	margin-right: 50px;
+}
+.nav {
+	position: fixed;
+	top:0;
+	width: 200px;
+	bottom: 0;
+	background: #3d464d;
+	z-index: 100;
+	font-weight: bold;
+	font-size: 16px;
+}
+.nav a {
+    height: 40px;
+    line-height: 40px;
+    color:#a7b1c2;
+}
+.sub-nav {
+	padding-bottom: 10px;
+}
+.sub-nav a{
+	height: 30px;
+    line-height: 30px;
+}
+.nav li {
+	list-style: none;
+	padding-left: 20px;
+}
+.nav li:hover {
+	background: #2a353c;
+}
+.nav li.current {
+	background: #2a353c;
+}
+.nav li:hover > a,.nav li.current > a {
+	color: #fff;
+}
+.nav-header {
+	height: 60px;
+	background: #0288d1;
+	line-height: 60px;
+	text-align: left;
+	padding-left: 10px;
+	font-size: 16px;
+	color:#e1f5fe;
+}
+.nav-header i {
+	margin-left: 10px;
+}
+.content {
+	margin-top:120px;
+	margin-left: 200px;
+	margin-right: 360px;
+}
+.btn {
+	display: inline-block;
+	padding: 10px 25px;
+	background: #03a9f4;
+	color:#fff;
+	text-align: center;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.router-chip {
+	top: 60px;
+    background: #ebebeb;
+    text-align: left;
+    color: #555;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+}
+.router-chip span {
+	cursor: pointer;
+}
+.step {
+	margin-right: 6px;
+}
+.wrapper {
+	width: 760px;
+	margin: 0 auto;
+}
+.btn-link {
+  color: #75b9e6;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
+.btn-link:hover,
+.btn-link:focus {
+  color: #3498da;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.help-card {
+  position: fixed;
+  right: 100px;
+  top: 200px;
+  background: #fff;
+  z-index: 999;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  width: 260px;
+}
+.help-card-content {
+  padding: 10px 20px;
+  line-height: 20px;
+}
+.help-card-title {
+  padding: 10px;
+  border-bottom: 1px solid #ebebeb;
+  font-size: 16px;
+  font-weight: bold;
+  background: #daecf9;
+}
+.help-card-title i {
+  font-size: 24px;
+  margin-right: 5px;
+  color: #ffcc66;
+}
+.help-card-content li {
+  border-bottom: 1px dotted #ccc;
+  padding: 10px 0;
+}

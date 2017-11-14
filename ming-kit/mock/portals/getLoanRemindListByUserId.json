@@ -1,0 +1,38 @@
+{
+	"code": 200,
+	"data":[{
+			"cusName":"范大浩",
+			"dueBillAmount":"150000",
+			"dueBillBeginDate":"2016/08/17",
+			"dueBillEndDate":"2017/08/17",
+			"appOpName":"商户联保贷款",
+			"busLng":null,
+			"busLat":null,
+			"remindType":1,
+			"rmdId":1,
+			"checkFlag":"0"
+		},{
+			"cusName":"杨艳坤",
+			"dueBillAmount":"150000",
+			"dueBillBeginDate":"2016/08/17",
+			"dueBillEndDate":"2017/08/17",
+			"appOpName":"商户联保贷款",
+			"busLng":null,
+			"busLat":null,
+			"remindType":2,
+			"rmdId":2,
+			"checkFlag":"1"
+		},{
+			"cusName":"杨亚龙",
+			"dueBillAmount":"150000",
+			"dueBillBeginDate":"2016/08/17",
+			"dueBillEndDate":"2017/08/17",
+			"appOpName":"商户联保贷款",
+			"busLng":null,
+			"busLat":null,
+			"remindType":3,
+			"rmdId":3,
+			"checkFlag":"2"
+		}],
+	"message":""
+}

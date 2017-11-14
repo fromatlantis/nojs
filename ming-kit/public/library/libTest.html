@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/library/dist/haloPlugins/haloPlugins.css">
+	<style type="text/css">
+	body {
+		background: #fff;
+	}
+	</style>
+</head>
+<body>
+	<button>切换</button>
+	<script type="text/javascript" src='/javascripts/lib/jquery-1.7.2.min.js'></script>
+	<script type="text/javascript" src='/library/dist/haloPlugins/haloPlugins.js'></script>
+	<script type="text/javascript">
+		//console.timeEnd('time');
+		//var halo = new halo();
+		//console.log(halo);
+		haloPlugins.msgPlus.init({
+			//position : "ic",
+			userId : "20080614320",
+			posId  : "E02",
+			orgId  : "13011576"
+		});
+		haloPlugins.industryWarn.init({
+			cityId: "13000181",
+			industryId: "0131"
+		});
+		//console.timeEnd('time');
+		haloPlugins.profile.init({
+			certificateCode:'133025196712294219',
+			loadOnceByDay: true
+		});
+		$('button').click(function(){
+			profile.destroy();
+			profile.init({
+				certificateCode:'130602197808291549'
+			});
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+	"name": "easing",
+	"family": "gallery",
+	"version": "1.3.0",
+	"description": "jQuery easing plugin",
+	"homepage": "http://gsgd.co.uk/sandbox/jquery/easing/",
+	"spm": {
+    	"alias": {"jquery": "jquery"},
+    	"output": ["easing.js"]
+	}
+}

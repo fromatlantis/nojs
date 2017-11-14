@@ -1,0 +1,14 @@
+{
+	"name": "daterangepicker",
+	"family": "gallery",
+	"version": "1.3.7",
+	"description": "Bootstrap框架下的日期选择控件（支持双日历选择）。",
+	"homepage": "https://github.com/dangrossman/bootstrap-daterangepicker",
+	"spm": {
+    	"alias": {
+    		"jquery": "jquery",
+    		"moment": "moment"
+		},
+    	"output": ["daterangepicker.js","daterangepicker-bs3.css"]
+	}
+}

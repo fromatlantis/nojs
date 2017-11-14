@@ -1,0 +1,12 @@
+{
+	"name": "copy",
+	"family": "plugins",
+	"version": "1.0.0",
+	"description": "提供复制方法",
+	"spm": {
+		"alias": {
+			"jquery": "jquery"
+		},
+		"output": ["copy.js", "flash/**"]
+	}
+}

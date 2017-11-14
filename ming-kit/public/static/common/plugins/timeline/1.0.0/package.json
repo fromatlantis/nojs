@@ -1,0 +1,12 @@
+{
+	"name": "timeline",
+	"family": "plugins",
+	"version": "1.0.0",
+	"description": "提供 timeline",
+	"spm": {
+		"alias": {
+			"jquery": "d3"
+		},
+		"output": ["timeline.js", "timeline.css", "images/*"]
+	}
+}

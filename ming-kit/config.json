@@ -1,0 +1,60 @@
+{
+	"devPath":"views",
+    "buildPath":"bin/assets",
+    "libPath":"public/library",
+    "publicPath":"/surveyRpt/",
+    "staticPath":"public", 
+    "debug":true,
+    "online":false,
+    "hot":false,
+    "testServer":{
+    	"sftp":{
+    		"host": "21.32.95.249",
+            "remotePath": "/opt/www/exj_managerv2/wechat/v4.0",
+            "user": "root",
+            "pass": "aliyun123123Q"
+    	},
+    	"wx":{
+    		"appId":"wxda1ad46a30222ae2"
+    	}
+    },
+    "onServer":{
+    	"sftp":{
+    		"host": "21.32.95.249",
+            "remotePath": "/surveyTemp/trunk/WebRoot/shorthand",
+            "user": "niuzhiwei",
+            "pass": "niuzhiwei"
+    	},
+    	"wx":{
+    		"appId":"wx9e60458de7e99750"
+    	}
+    },
+    "alias":{
+        "zepto" : "javascripts/lib/zepto.min.js",
+        "jquery" : "javascripts/lib/jquery-1.10.2.min.js",
+        "Template" : "javascripts/core/Template.js",
+        "commonCss" : "stylesheets/common.css",
+        "Util" : "javascripts/core/Util.js",
+        "swiper2" : "javascripts/lib/swiper2.x/swiper.min.js",
+        "swiper2Css" : "javascripts/lib/swiper2.x/swiper.css",
+        "jquery.form" : "javascripts/lib/jquery.form.js",
+        "FetchApi" : "javascripts/core/FetchApi.js",
+        "downexcel" : "javascripts/core/downexcel.js",
+        "marquee" : "javascripts/lib/marquee.js",
+        "tags" : "javascripts/lib/tags/tags.js",
+        "Store" : "javascripts/core/Store.js",
+        "Events" : "javascripts/core/Events.js",
+        "Cookie" : "javascripts/core/Cookie.js",
+        "echarts" : "javascripts/lib/echarts.js",
+        "slimscroll" : "javascripts/lib/jquery.slimscroll.js",
+        "momentn" : "javascripts/lib/moment.js",
+        "moment" : "javascripts/lib/moment-with-locales.js",
+        "crypto" : "javascripts/lib/crypto-js",
+        "select2" : "javascripts/lib/select2/select2.min.js",
+        "datepicker" : "javascripts/lib/datepicker/daterangepicker.js",
+        "datepickerCss" : "javascripts/lib/datepicker/daterangepicker.css",
+        "pagination" : "javascripts/lib/pagination/1.2.0/pagination.js",
+        "paginationCss" : "javascripts/lib/pagination/1.2.0/pagination.css",
+        "bootstrap":"javascripts/lib/bootstrap/js/bootstrap.js"
+    }
+}
