@@ -55,6 +55,7 @@
         "datepickerCss" : "javascripts/lib/datepicker/daterangepicker.css",
         "pagination" : "javascripts/lib/pagination/1.2.0/pagination.js",
         "paginationCss" : "javascripts/lib/pagination/1.2.0/pagination.css",
-        "bootstrap":"javascripts/lib/bootstrap/js/bootstrap.js"
+        "bootstrap" : "javascripts/lib/bootstrap/js/bootstrap.js",
+        "underscore"  : "javascripts/lib/underscore.js"
     }
 }

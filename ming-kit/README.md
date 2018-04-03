@@ -1,19 +1,13 @@
-前端代码编译步骤
+gulp + webpack + jquery + 多页面架构
 ===
-##启动前端项目
-安装nodejs，cmd进入项目目录，运行npm install & npm start
 ##按步骤运行以下命令
 ```
 //打包
 1. gulp pack
 ```
 ```
-//将html转换为jsp
-2. gulp generate-jsp
-```
-```
-//将编译后的代码放到相应的svn目录
-3. gulp push-svn <br>
+//启动
+2. npm start
 ```
 ###如果不想频繁打包可以直接用webpack --watch命令
 特性

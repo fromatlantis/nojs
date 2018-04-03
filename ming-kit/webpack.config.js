@@ -60,7 +60,7 @@ var plugins =function() {
         if(filepath in entries) {
             //conf.title = config.title[filename];
             conf.inject = 'body';
-            conf.chunks = ['common', filepath];
+            conf.chunks = ['common', 'vender', filepath];
             conf.chunksSortMode='dependency';//根据依赖排序
         }
         //if(/b|c/.test(filename)) conf.chunks.splice(2, 0, 'common-b-c')
@@ -70,7 +70,9 @@ var plugins =function() {
 }()
 
 if(debug) {
-    extractCSS = new ExtractTextPlugin(cssStaticPath+'[name].css?[contenthash:8]')
+    extractCSS = new ExtractTextPlugin(cssStaticPath+'[name].css?[contenthash:8]',{
+        allChunks:true //如果为false:依赖js引入的css不会被打包引入
+    })
     cssLoader = extractCSS.extract(['css'])
     sassLoader = extractCSS.extract(['css', 'sass'])
     if(config.hot){
@@ -115,7 +117,7 @@ if(debug) {
 // 为实现webpack-hot-middleware做相关配置
 var entry=Object.assign({
         // 用到什么公共lib（例如React.js），就把它加进vender去，目的是将公用库单独提取打包
-        'vender': ['Store']
+        'vender': ['Store','Events','Util','underscore']
     },entries);
 if(config.hot){
     for (var key of Object.keys(entry)) {
@@ -142,15 +144,19 @@ module.exports = {
         alias: config.alias,
         extensions: ['', '.js', '.css', '.scss', '.tpl', '.png', '.jpg']
     },
+    //注意commonsChunk的顺序，反过来就会产生代码冗余
     plugins: [new CommonsChunkPlugin({
-                name: 'common',
-                chunks: chunks //only use these entities(最优方案：所有入口文件提取可以得到最大值)
-            }),new webpack.ProvidePlugin({
-                //$: "jquery",//适配各种写法
-                //jQuery: "jquery",
-                //"window.jQuery": "jquery",
-                "moment": "moment"
-            })].concat(plugins),
+        name: 'common',
+        minChunks: 2, //1:common.js会提取所有的js，入口文件仅一行代码;2:conmmom.js会提取require大于等于2次的模块
+        chunks: chunks //only use these entities(最优方案：所有入口文件提取可以得到最大值)
+    }),new CommonsChunkPlugin({
+        name: 'vender',//第三方公共Lib实体的公共部分。
+        minChunks: Infinity,
+        //chunks: 'vender'
+    }),new webpack.ProvidePlugin({
+        "moment": "moment",
+        "_" : "underscore" //暴露至全局
+    })].concat(plugins),
     /**
     externals: {
         'jquery':'$'//以<script>的形式挂在到页面上来加载
